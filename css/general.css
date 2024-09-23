@@ -58,6 +58,8 @@ Default 10px;
 html {
   font-size: 62.5%;
   overflow-x: hidden;
+
+  scroll-behavior: smooth;
 }
 
 body {
@@ -236,7 +238,7 @@ body {
 
 *:focus {
   outline: none;
-  box-shadow: 0 0 0 0.8rem hsla(28, 80%, 52%, 0.5);
+  box-shadow: 0 0 0 0.8rem rgba(231, 126, 35, 0.5);
 }
 
 /******************************/

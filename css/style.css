@@ -626,3 +626,33 @@ strong {
 .footer-link:active {
   color: #555;
 }
+
+/* BUTTON BACK TO TOP */
+
+.btn-up-nav {
+  display: none;
+}
+
+.btn-up-to-top:link,
+.btn-up-to-top:visited {
+  position: fixed;
+  bottom: 2.4rem;
+  right: 2.4rem;
+  border-radius: 50%;
+  color: #e67e22;
+  border: 3px solid #e67e22;
+  transition: all 0.3s;
+}
+.btn-up-to-top:hover,
+.btn-up-to-top:active {
+  background-color: #e67e22;
+  color: #fff;
+}
+.icon-up {
+  width: 4rem;
+  height: 4rem;
+}
+
+.visible.btn-up-nav {
+  display: block;
+}

@@ -14,6 +14,53 @@ toggleBtnEl.addEventListener('click', function () {
   headerEl.classList.toggle('nav-open');
 });
 
+// Smooth scrolling animation
+const allLinks = document.querySelectorAll('a:link');
+
+allLinks.forEach(function (link) {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const href = link.getAttribute('href');
+
+    // Scroll back to top
+    if (href === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Scroll to other links
+    if (href !== '#' && href.startsWith('#')) {
+      const sectionEl = document.querySelector(href);
+      sectionEl.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Close mobile nav
+    if (link.classList.contains('main-nav-link')) {
+      headerEl.classList.toggle('nav-open');
+    }
+  });
+});
+
+// Visible button back to top
+
+const btnUpToTop = document.querySelector('.btn-up-nav');
+
+function visibleBtnBackTop() {
+  window.addEventListener('scroll', () => {
+    // Get the current scroll position
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    // Get the height of the window
+    const windowHeight = window.innerHeight;
+
+    if (scrollPosition > windowHeight) {
+      btnUpToTop.classList.add('visible');
+    } else {
+      btnUpToTop.classList.remove('visible');
+    }
+  });
+}
+visibleBtnBackTop();
+
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
   var flex = document.createElement('div');
